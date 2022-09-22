@@ -58,6 +58,7 @@ function dev() {
   watch("src/img/**/*", imagenes);
 }
 
+exports.dev = dev;
 exports.default = series(imagenes, versionWebp, versionAvif, css, dev);
 
 // series - Las tareas son secuenciales
