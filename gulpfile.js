@@ -9,7 +9,9 @@ const sass = require("gulp-sass")(require("sass"));
     3 - Guardar el .css
 */
 function css(done) {
-  src("src/scss/app.scss").pipe(sass()).pipe(dest("build/css"));
+  src("src/scss/app.scss")
+    .pipe(sass({ outputStyle: "compressed" }))
+    .pipe(dest("build/css"));
 
   done();
 }
