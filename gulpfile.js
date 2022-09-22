@@ -13,6 +13,9 @@ const autoprefixer = require("autoprefixer");
 function css(done) {
   src("src/scss/app.scss")
     .pipe(sass({ outputStyle: "compressed" }))
+    .on("error", function (err) {
+      console.log(err.message);
+    })
     .pipe(postcss([autoprefixer()]))
     .pipe(dest("build/css"));
 
@@ -23,12 +26,6 @@ function dev() {
   watch("src/scss/**/*.scss", css);
 }
 
-function tareaDefault() {
-  console.log("Soy la tarea por default");
-}
-
-exports.css = css;
-exports.dev = dev;
 exports.default = series(css, dev);
 
 // series - Las tareas son secuenciales
