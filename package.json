@@ -1,0 +1,20 @@
+{
+  "name": "05-cafeteria",
+  "version": "1.0.0",
+  "description": "Aprendiendo PNPM, SASS, BEM y Gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ali Badillo",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "glob-parent@<5.1.2": ">=5.1.2"
+    }
+  }
+}
