@@ -7,6 +7,7 @@ const autoprefixer = require("autoprefixer");
 
 // Imagenes
 const imagemin = require("gulp-imagemin");
+const webp = require("gulp-webp");
 
 /* 
   COMPILAR SASS
@@ -33,12 +34,16 @@ function imagenes() {
     .pipe(dest("build/img"));
 }
 
+function versionWebp() {
+  return src("src/img/**/*.{png,jpg}").pipe(webp()).pipe(dest("build/img"));
+}
+
 function dev() {
   watch("src/scss/**/*.scss", css);
   watch("src/img/**/*", imagenes);
 }
 
-exports.default = series(imagenes, css, dev);
+exports.default = series(imagenes, versionWebp, css, dev);
 
 // series - Las tareas son secuenciales
 // parallel - Las tareas son paralelas
