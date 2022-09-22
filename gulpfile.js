@@ -22,11 +22,16 @@ function css(done) {
   done();
 }
 
-function dev() {
-  watch("src/scss/**/*.scss", css);
+function imagenes() {
+  return src("src/img/**/*").pipe(dest("build/img"));
 }
 
-exports.default = series(css, dev);
+function dev() {
+  watch("src/scss/**/*.scss", css);
+  watch("src/img/**/*", imagenes);
+}
+
+exports.default = series(imagenes, css, dev);
 
 // series - Las tareas son secuenciales
 // parallel - Las tareas son paralelas
