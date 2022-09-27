@@ -68,7 +68,7 @@ function dev() {
 }
 
 exports.dev = dev;
-exports.default = series(imagenes, versionWebp, versionAvif, css, dev);
+exports.default = series(js, imagenes, versionWebp, versionAvif, css);
 
 // series - Las tareas son secuenciales
 // parallel - Las tareas son paralelas
