@@ -39,6 +39,10 @@ function imagenes() {
     .pipe(dest("build/img"));
 }
 
+function js() {
+  return src("src/js/**/*.js").pipe(dest("build/js"));
+}
+
 function versionWebp() {
   const opciones = {
     quality: 50,
@@ -60,6 +64,7 @@ function versionAvif() {
 function dev() {
   watch("src/scss/**/*.scss", css);
   watch("src/img/**/*", imagenes);
+  watch("src/js/**/*.js", js);
 }
 
 exports.dev = dev;

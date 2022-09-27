@@ -2,7 +2,6 @@
 @use "base/variables" as v;
 
 .contenido-menu {
-  background-image: url(../img/cafe.jpg);
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 100%;
@@ -10,8 +9,8 @@
   padding-bottom: 20rem;
 
   @include m.telefono {
-  padding-bottom: 20rem;
-  aspect-ratio: 2 / 3;
+    padding-bottom: 20rem;
+    aspect-ratio: 2 / 3;
   }
 
   @media (min-width: 700px) {
@@ -33,4 +32,13 @@
       margin-bottom: 0;
     }
   }
+}
+.notavif.notwebp .contenido-menu {
+  background-image: url(../img/cafe.jpg);
+}
+.webp .contenido-menu {
+  background-image: url(../img/cafe.webp);
+}
+.avif .contenido-menu {
+  background-image: url(../img/cafe.avif);
 }

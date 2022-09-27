@@ -4,10 +4,24 @@
 .contenido-contacto {
   @include m.tablet {
     @include m.grid(2, v.$separacion);
-    background-image: url(../img/granos_cafe.jpg);
     background-repeat: no-repeat;
     background-position: right center;
     background-size: 40%;
+  }
+}
+.notavif.notwebp .contenido-contacto {
+  @include m.tablet {
+    background-image: url(../img/granos_cafe.jpg);
+  }
+}
+.webp .contenido-contacto {
+  @include m.tablet {
+    background-image: url(../img/granos_cafe.webp);
+  }
+}
+.avif .contenido-contacto {
+  @include m.tablet {
+    background-image: url(../img/granos_cafe.avif);
   }
 }
 
