@@ -43,6 +43,10 @@ function js() {
   return src("src/js/**/*.js").pipe(dest("build/js"));
 }
 
+function html() {
+  return src("*.html").pipe(dest("build"));
+}
+
 function versionWebp() {
   const opciones = {
     quality: 50,
@@ -65,10 +69,11 @@ function dev() {
   watch("src/scss/**/*.scss", css);
   watch("src/img/**/*", imagenes);
   watch("src/js/**/*.js", js);
+  watch("*.html", html);
 }
 
 exports.dev = dev;
-exports.default = series(js, imagenes, versionWebp, versionAvif, css);
+exports.default = series(js, html, imagenes, versionWebp, versionAvif, css);
 
 // series - Las tareas son secuenciales
 // parallel - Las tareas son paralelas
